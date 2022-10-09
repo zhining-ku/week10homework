@@ -1,0 +1,74 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A simple bar chart with embedded data.",
+    "data": {
+        "url":" https://raw.githubusercontent.com/zhining-ku/fit3179week9/main/QS%20World%20University%20Rankings%202022_ver2.csv"
+     
+    },
+
+          "mark": "bar",
+          "encoding": {
+            "x": {"field":"university", "type":"nominal"},
+            "y": {"field":"score","type":"quantitative"},
+            "tooltip":  {"field": "score", "type": "quantitative"}
+        },
+        "params": [{
+            "name": "region",
+            "bind": {"input": "select", 
+            "options": [null, "Asia", "North America", "Europe", "Oceania", "Latin America"
+                ],
+        "labels":[
+        "Show All",
+        "Asia", "North America", "Europe", "Oceania", "Latin America"
+        ],
+        "name": "Continent Selection: "
+        }
+        }
+        ],
+        "transform": [
+            {"filter": "region==null  || datum.region== region"},
+            {"filter": "datum.rank_display<=100"}
+        ]
+
+
+    
+
+    
+
+
+    
+
+
+    
+ 
+          } 
+    
+
+      
+
+    
+    
+    
+    
+
+
+
+
+
+  
+  
+    
+ 
+    
+    
+
+    
+
+
+    
+    
+   
+    
+
+
+  
